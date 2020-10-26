@@ -1,0 +1,15 @@
+"Condition Zero - Terrorist Mod"
+{
+  "Author"      "DodoTheExtinct"
+  "Title"       "Terrorist Mod"
+  "Description" "It's time to throw away your defuser and bring out the explosives!\n\nCondition Zero Terrorist Mod allows you to play Condition Zero as the terrorists, planting bombs instead of defusing them, guarding hostages instead of rescuing them.  Your weapons of choice are those of the terrorists, such as the AK-47.  Finally, those who you fought in the Counter Terrorist missions are now your allies. \n\n This is a variation of Swissbeats99's mod."
+  "URL"         "https://tinyurl.com/y32k3gk8"
+  "SoloPlay"	"1"
+  "CoopPlay"	"1"
+  "Team"		"T"
+  "BGColor1"	"0 0 0"
+  "BGColor2"	"0 0 0"
+  "TextColor"	"255 255 255"
+  "BotProfile"  "BotProfilesTMod.db"
+}
+ 

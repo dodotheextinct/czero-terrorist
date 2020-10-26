@@ -1,0 +1,217 @@
+"CareerGame"
+{
+    "InitialPoints"             "2"
+    "MatchWins"                 "3"
+    "MatchWinBy"                "2"
+    "Characters"                "Hammett Axl Anselmo Dimebag Friedman Ozzy Hetfield Mustaine Bates Manson Dahmer Cezanne Picasso Vermeer DaVinci VanGogh Monet Renoir Haydn Vivaldi Cutter Schubert Schumann Verdi Wagner Rachmaninov Tchaikovsky Chopin Beethoven Bach Mozart Brahms Mussolini Xerxes Stalin Roosevelt Churchill Hitler"
+
+	// CostAvailability: for each bot point cost, specify the number of reputation points needed to hire him.
+	// If a value is not present or 0, that cost and higher are assumed to be always available.
+	"CostAvailability"
+	{
+		"1"						"1"
+		"2"						"6"
+		"3"						"10"
+		"4"						"15"
+		"5"						"99"
+	}
+
+    "Maps"
+    {
+        // Maps are in triplets
+        // 'minEnemies' defines the minimum number of enemies of the map (from the 'bots' entry, left to right)
+        // 'threshold' defines the Reputation Point value above which one enemy is added for every additional RP until we run out of bots on the 'bots' line
+
+        // A note on tasks:
+        //
+        // tasks are one of the following:
+        //    kill         <N> [survive | inarow]
+        //    killwith     <N> <weapon> [survive | inarow]
+        //    killblind    <N> [survive | inarow]
+        //    winfast      <S> [survive | inarow]
+        //    headshot     <N> [survive | inarow]
+        //    headshotwith <N> <weapon> [survive | inarow]
+        //    killall
+        //    rescue       <N> [survive | inarow]
+        //    killall
+        //    injure       <N> [survive | inarow]
+        //    injurewith   <N> <weapon> [survive | inarow]
+        //
+        // tasks can contain a numeric value (# of kills, # of seconds, etc)
+        // tasks can contain a weapon name or weapon classname (for the killwith and headshotwith tasks)
+        // you can add "survive" so the player must survive to the end of the round to complete the task
+        // you can add "inarow" so the player must complete the task N times without dying (across round boundaries)
+        // group words of a task with '.  I.e. 'kill 3'
+        //
+        // Weapon names/classes are:
+        //    scout
+        //    xm1014
+        //    mac10
+        //    sg552
+        //    ump45
+        //    g3sg1
+        //    galil
+        //    galil
+        //    awp
+        //    mp5
+        //    m249
+        //    m3
+        //    ak47
+        //    tmp
+        //    sg552
+        //    ak47
+        //    p90
+        //    elites
+        //    weapon
+        //    knife
+        //    grenade (text is singular)
+        //    hegren  (text is plural, but the behavior is the same)
+        //    pistol
+        //    SMG
+        //    machinegun
+        //    shotgun
+        //    rifle
+        //    sniper
+        //    fn57
+        //    elites
+
+        // - start ------------------------------------------
+        "de_dust_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern"
+            "minEnemies"  "3"
+            "threshold"   "2"
+            "tasks"       "'kill 1'"
+        }
+        "cs_office_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Stanley Vern Morris"
+            "minEnemies"  "3"
+            "threshold"   "2"
+            "tasks"       "'killwith 1 SMG' 'kill 1 survive'"
+        }
+        "de_prodigy_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Vern Stanley Morris"
+            "minEnemies"  "3"
+            "threshold"   "2"
+            "tasks"       "'killwith 1 sniper'"
+        }
+
+        // - early -------------------------------------------
+        "de_tides_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern"
+            "minEnemies"  "5"
+            "threshold"   "7"
+            "tasks"       "'killwith 1 shotgun' 'winfast 90'"
+        }
+        "cs_italy_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern"
+            "minEnemies"  "5"
+            "threshold"   "7"
+            "tasks"       "'killwith 1 sniper' 'kill 1 survive'"
+        }
+        "de_inferno_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern"
+            "minEnemies"  "5"
+            "threshold"   "7"
+            "tasks"       "'killwith 1 pistol'"
+        }
+
+        // - halfway -----------------------------------------
+        "de_dust2_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Quincy Ben Gus"
+            "minEnemies"  "6"
+            "threshold"   "10"
+            "tasks"       "'killwith 2 sniper' 'winfast 90'"
+        }
+        "cs_militia_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Ben Quincy Gus"
+            "minEnemies"  "6"
+            "threshold"   "10"
+            "tasks"       "'killwith 2 shotgun' 'kill 1 survive'"
+        }
+        "de_stadium_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Gus Quincy Ben"
+            "minEnemies"  "6"
+            "threshold"   "10"
+            "tasks"       "'killwith 2 sg552' 'winfast 90'"
+        }
+
+        // - halfway ----------------------------------------
+        "de_chateau_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Quincy Ben Gus"
+            "minEnemies"  "6"
+            "threshold"   "13"
+            "tasks"       "'killwith 2 m249'"
+        }
+        "cs_havana_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Gus Quincy Ben"
+            "minEnemies"  "6"
+            "threshold"   "13"
+            "tasks"       "'killwith 2 pistol' 'kill 1 survive'"
+        }
+        "de_cbble_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Ben Quincy Gus"
+            "minEnemies"  "6"
+            "threshold"   "13"
+            "tasks"       "'killwith 2 elites' 'winfast 90'"
+        }
+
+        // - late -------------------------------------------
+        "de_aztec_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Ben Quincy Gus"
+            "minEnemies"  "7"
+            "threshold"   "16"
+            "tasks"       "'kill 3' 'killwith 2 awp' 'winfast 90'"
+        }
+        "cs_downed_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Quincy Ben Gus"
+            "minEnemies"  "7"
+            "threshold"   "16"
+            "tasks"       "'kill 3' 'killwith 2 galil' 'kill 1 survive'"
+        }
+        "de_airstrip_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Gus Quincy Ben"
+            "minEnemies"  "7"
+            "threshold"   "16"
+            "tasks"       "'kill 3' 'killwith 2 elites'"
+        }
+
+        // - end --------------------------------------------
+        "de_piranesi_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Ben Quincy Gus"
+            "minEnemies"  "7"
+            "threshold"   "19"
+            "tasks"       "'kill 5' 'killwith 3 sg552'"
+        }
+        "de_fastline_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Gus Quincy Ben"
+            "minEnemies"  "7"
+            "threshold"   "19"
+            "tasks"       "'kill 6' 'killwith 3 SMG'"
+        }
+        "de_torn_cz"
+        {
+            "bots"        "Cooper Floyd Kenny Morris Stanley Vern Quincy Gus Ben"
+            "minEnemies"  "7"
+            "threshold"   "19"
+            "tasks"       "'kill 7' 'killwith 3 sniper'"
+        }
+    }
+}
+ 
